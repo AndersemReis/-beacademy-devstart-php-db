@@ -1,6 +1,23 @@
 <?php
 include 'modulo02\projeto-final\vendor\autoload.php';
-use App\Controller\IndexController;
+
+$database = 'db_store';
+$username = 'root';
+$password = 'Vanessa*01';
+
+$connection = new PDO('mysql:host=localhost:3306;dbname='.$database,$username,$password);
+
+$query = 'SELECT * FROM tb_category';
+$preparacao = $connection->prepare($query);
+$preparacao->execute();
+
+var_dump($preparacao);
+
+while ($registre = $preparacao->fetch()){
+    var_dump($registre);
+}
+
+/*use App\Controller\IndexController;
 use App\Controller\ProductController;
 use App\Controller\CategoryController;
 use App\Controller\ErrorController;
@@ -29,4 +46,4 @@ if(false === isset($routes[$url])) {
 $controllerName = $routes[$url]['controller'];
 $methodName = $routes[$url]['method'];
 
-(new $controllerName()) -> $methodName();
+(new $controllerName()) -> $methodName();*/
