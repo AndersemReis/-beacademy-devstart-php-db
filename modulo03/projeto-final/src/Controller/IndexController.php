@@ -7,7 +7,7 @@ namespace App\Controller;
 class IndexController extends AbstractController
 {
     public function indexAction(): void{
-      
+        $teste = dirname(__DIR__);
         parent::render('index/index');
     }
 

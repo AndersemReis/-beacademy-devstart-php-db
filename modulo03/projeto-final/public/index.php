@@ -1,14 +1,11 @@
 <?php
-include 'modulo02\projeto-final\vendor\autoload.php';
+include 'modulo03\projeto-final\vendor\autoload.php';
 
-$database = 'db_store';
-$username = 'root';
-$password = 'Vanessa*01';
+use App\Connection\Connection;
 
-$connection = new PDO('mysql:host=localhost:3306;dbname='.$database,$username,$password);
-
+$connection = Connection::getConnection();
 $query = 'SELECT * FROM tb_category';
-$preparacao = $connection->prepare($query);
+$preparacao = $connection->prepare($query); 
 $preparacao->execute();
 
 var_dump($preparacao);
@@ -16,8 +13,8 @@ var_dump($preparacao);
 while ($registre = $preparacao->fetch()){
     var_dump($registre);
 }
-
-/*use App\Controller\IndexController;
+/*
+use App\Controller\IndexController;
 use App\Controller\ProductController;
 use App\Controller\CategoryController;
 use App\Controller\ErrorController;
@@ -46,4 +43,5 @@ if(false === isset($routes[$url])) {
 $controllerName = $routes[$url]['controller'];
 $methodName = $routes[$url]['method'];
 
-(new $controllerName()) -> $methodName();*/
+(new $controllerName()) -> $methodName();
+*/
