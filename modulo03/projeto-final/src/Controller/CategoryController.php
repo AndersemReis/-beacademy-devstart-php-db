@@ -9,12 +9,12 @@ class CategoryController extends AbstractController
 {
     public function listAction(): void 
     {
-        $con = Connection::getConnection;
+        $con = Connection::getConnection();
 
         $result = $con->prepare('SELECT * FROM tb_category');
-        $result->execute(\PDO::FETCH_ASSOC);
-
-        parent::render('category/list');
+        $result->execute();
+        
+        parent::render('category/list', $result);
     }
 
     public function addAction(): void 
