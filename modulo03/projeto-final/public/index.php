@@ -1,7 +1,7 @@
 <?php
 include 'modulo03\projeto-final\vendor\autoload.php';
-
-use App\Connection\Connection;
+use App\Controller\ErrorController;
+/*use App\Connection\Connection;
 
 $connection = Connection::getConnection();
 $query = 'SELECT * FROM tb_category';
@@ -12,27 +12,10 @@ var_dump($preparacao);
 
 while ($registre = $preparacao->fetch()){
     var_dump($registre);
-}
-/*
-use App\Controller\IndexController;
-use App\Controller\ProductController;
-use App\Controller\CategoryController;
-use App\Controller\ErrorController;
+}*/
 
 $url = explode('?',$_SERVER['REQUEST_URI'])[0];
-
-function createRoute(string $controllerName, string $methodName){
-    return [
-        'controller' => $controllerName,
-        'method' => $methodName,
-    ];
-}
-
-$routes = [
-    '/' => createRoute(IndexController::class, 'indexAction'),
-    '/produtos' => createRoute(ProductController::class, 'listAction'),
-    '/produtos/novo' => createRoute(ProductController::class, 'addAction')
-];
+$routes = include 'modulo03\projeto-final\config\routes.php';
 
 if(false === isset($routes[$url])) {
     (new ErrorController()) -> notFoundAction();
@@ -44,4 +27,3 @@ $controllerName = $routes[$url]['controller'];
 $methodName = $routes[$url]['method'];
 
 (new $controllerName()) -> $methodName();
-*/
