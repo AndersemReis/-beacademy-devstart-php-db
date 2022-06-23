@@ -46,7 +46,31 @@ class ProductController extends AbstractController
 
     public function editAction(): void 
     {
-        parent::render('product/edit');
+        $id = $_GET['id'];
+        $con = Connection::getConnection();
+        
+        if($_POST){
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+            $quantity = $_POST['quantity'];
+            $photo = $_POST['photo'];
+            $value = $_POST['value'];
+           
+            $query = "UPDATE tb_product SET 
+                        name='{$name}', description='{$description}',
+                        value='{$value}', photo='{$photo}',quantity='{$quantity}'
+                        WHERE id='{$id}'";
+            $resultUpdate = $con->prepare($query);
+            $resultUpdate->execute();
+            echo 'Produto atualizado';
+        }
+        
+        $product = $con->prepare("SELECT * FROM tb_product WHERE id='{$id}'");
+        $product->execute();
+
+    parent::render('product/edit', [
+        'product' => $product->fetch(\PDO::FETCH_ASSOC),
+    ]);
     }
 
     public function removeAction():void 
