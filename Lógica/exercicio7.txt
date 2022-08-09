@@ -1,0 +1,34 @@
+Var
+
+num1, num2, result: real
+operacao:caractere
+
+Inicio
+
+escreva("Informe o primeiro número: ")
+leia(num1)
+escreva("Informe o segundo número: ")
+leia(num2)
+escreva("Informe a operação: (-,+,/,*)")
+leia(operacao)
+
+escolha opereracao
+	caso "+"
+   	resultado := num1 + num2
+   	caso "-"
+   	resultado := num1 - num2
+   	caso "*"
+   	resultado := num1 * num2
+   	caso "/"
+   	resultado := num1 / num2
+   	outrocaso
+   	resultado :=-1
+fimescolha
+   
+se resultado =-1 entao
+escreval("Operação incorreta")
+senao então
+escreval("O resultado de ",num1," " , operacao ," ", num2 , " é :",result)
+fimse
+
+Fimalgoritmo

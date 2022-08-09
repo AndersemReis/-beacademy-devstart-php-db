@@ -1,0 +1,13 @@
+Var
+
+num,i: inteiro
+
+
+Inicio
+escreva("Insira um número para multiplicar: ")
+leia(num)
+escreval("Tabuada de ",num,"é: ")
+para i de 1 ate 10 faca
+escreval(num," x ",i," = ", num * i)
+fimpara
+Fimalgoritmo

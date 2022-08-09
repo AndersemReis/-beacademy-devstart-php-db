@@ -1,0 +1,16 @@
+Var
+idade:inteiro
+Inicio
+escreva("Digite sua idade: ")
+leia(idade)
+se (idade < 18) entao
+escreval("Menor de idade")
+senao
+	se (idade >= 18) E (idade < 60) entao
+        	escreval("Você é adulto")
+   	senao
+        	escreval("Você é um idoso")
+   	fimse
+fimse
+
+Fimalgoritmo

@@ -1,0 +1,19 @@
+Var
+
+nome: caractere
+idade: inteiro
+
+Inicio
+
+escreval("Informe seu nome: ")
+leia(nome)
+escreval("Informe sua idade: ")
+leia(idade)
+escreval("Seu nome é: ", nome, " você tem: ",idade, " anos")
+escreval("Você é maior de idade?",(idade > 18))
+escreval("Você tem 25 anos?",(idade = 25))
+escreval("Você tem 25 anos e seu nome nao é Marcos? ",(idade = 25) E (nome <> "Marcos"))
+escreval("Você nao tem 25 anos e seu nome é Marcos? ",(idade <> 25) OU (nome="Marcos"))
+escreval("a sua idade dividida por 2 é igual a 0?",(idade mod 2 = 0))
+
+Fimalgoritmo

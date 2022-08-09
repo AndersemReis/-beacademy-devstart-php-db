@@ -1,0 +1,32 @@
+Var
+
+base,alt,area,perimetro: real
+fig:caractere
+
+Inicio
+escreva("escolha uma das letras para a figura (q - para quadradado t - para triangulo)")
+leia(fig)
+escolha fig
+   caso "q"
+   escreval("Digite o tamanho da lateral")
+   leia(base)
+   area := base*base
+   perimetro:= base * 4
+   caso "t"
+   escreval("Digite a base do triangulo")
+   leia(base)
+   escreval("Digite a altura do triangulo")
+   leia(alt)
+   area := (base * alt) / 2
+   perimetro:= base + alt + alt
+   outrocaso
+   perimetro := -1
+fimescolha
+   
+se perimetro = -1 entao
+escreval("Operação incorreta")
+senao entao
+escreval("O tamanho da area é: ",area," o tamanho do perímetro é: ",perimetro)
+fimse
+
+Fimalgoritmo

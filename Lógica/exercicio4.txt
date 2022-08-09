@@ -1,0 +1,33 @@
+Var
+
+nome: caractere
+peso, alt, imc: real
+
+Inicio
+
+escreva("Informe o seu nome: ")
+leia(nome)
+escreva("Informe o seu peso: ")
+leia(peso)
+escreva("Informe a sua altura: ")
+leia(alt)
+imc<-peso/(alt*alt)
+escreval("Seu IMC é de",imc)
+se (imc<19) entao
+	escreval ("Você está abaixo do peso")
+senao
+	se (imc >= 19) E (imc < 25) entao
+		escreval ("Você está no peso normal")
+   	senao
+        	se (imc >=25) E (imc < 30) entao
+        		escreval ("Você está com sobrepeso")
+   		senao
+        		se (imc >=30) E (imc < 40) entao
+        			escreval ("Você está com obesidade Tipo 1")
+   			senao
+        			escreval("Você está com obesidade Mórbida")
+   			fimse
+   		fimse
+   	fimse
+fimse
+Fimalgoritmo

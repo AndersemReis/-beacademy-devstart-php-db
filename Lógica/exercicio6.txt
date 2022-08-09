@@ -1,0 +1,27 @@
+Var
+
+saldoini,valoperacao,saldofim:real
+operacao:caractere
+
+Inicio
+escreval("Informe o seu saldo inicial: ")
+leia(saldoini)
+escreval("Informe "s" para saque e "d" para depósito")
+leia(operacao)
+se (operacao = "s") entao
+escreval("informe o valor que você deseja sacar")
+leia(valoperacao)
+saldofim<-saldoini-valoperacao
+escreval("seu saldo inicial é: ",saldoini," o valor sacado foi: ",valoperacao," seu saldo final é",saldofim)
+senao
+se (operacao = "d") entao
+escreval("Digite o valor que deseja depositar")
+leia(valoperacao)
+saldofim<-saldoini+valoperacao
+escreval("Seu saldo inicial: ",saldoini," Valor depositado foi: ",valoperacao," seu saldo final é: ",saldofim)
+senao
+escreval("Operaçao invalida")
+fimse
+fimse
+
+Fimalgoritmo

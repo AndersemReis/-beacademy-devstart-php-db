@@ -1,0 +1,15 @@
+Var
+
+saldoini,dep,saldoat:real
+
+Inicio
+
+escreval("Informe o seu saldo: ")
+leia(saldoini)
+escreval("Informe o valor que deseja depositar")
+leia(deposito)
+saldoat<-saldoini + dep
+escreval("O seu saldo era de ",saldoini)
+escreval("Após o seu depósito de ",dep," agora o seu saldo passou a ser",saldoat)
+
+Fimalgoritmo

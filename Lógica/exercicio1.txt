@@ -1,0 +1,16 @@
+Var
+nome: caractere
+peso, alt: real
+
+Inicio
+
+escreval("Informe seu nome: ")
+leia(nome)
+escreval("Informe seu peso: ")
+leia(peso)
+escreval("Informe sua altura: ")
+leia(alt)
+
+escreva("Nome: " + nome + " Altura: ", alt, " Peso: ", peso," IMC",peso/(alt*alt))
+
+Fimalgoritmo
